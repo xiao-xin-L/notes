@@ -72,4 +72,104 @@
 // confirm(result);
 
 // 如果今天是星期二，那么1000天后是星期几？用户输入一个天数，计算这个天数后是星期几?
+// var date = 2;
+// var dateNumber = parseInt(prompt("请输入天数:"));
+// var result = dateNumber % 7 + date;
+// if (result === 8) {
+//     alert(result = 1);
+// } else {
+//     alert(result);
+// }
 
+
+// var obj = {
+//     a : function(){
+//         console.log(this, 1);
+//         return function(){
+//             console.log(this, 4);
+//         }
+//     },
+//     b : () => {
+//         console.log(this, 2)
+//         return () => {
+//             console.log(this, 3);
+//         }
+//
+//     }
+// }
+//
+// obj.a()();
+// obj.b()();
+// 访问器属性
+// var obj = {
+//     _year: 2020,
+//     edition: 1
+// }
+// Object.defineProperty(obj, "year", {
+//     get: function(){
+//         return obj._year;
+//     },
+//     set: function(value){
+//         if(value > 2020){
+//             this._year = value;
+//             this.edition += value - 2020
+//         }
+//     },
+//     configurable: true,
+//     enumerable: true
+// })
+// // obj.year = 2021;
+// console.log(obj.edition);
+
+
+// let arr = [1, 5, 8, 6, 3, 52, 13, 42];
+// let sum = arr.reduceRight(function(pre, fir, index, array){
+//     return pre + fir;
+// },10)
+// console.log(sum);
+
+// var k = 0;
+// for(var i=0,j=0;i<10,j<6;i++,j++){
+//     k += i + j;
+// }
+// console.log(k)
+
+// let ul = document.querySelector("ul");
+// console.log(ul.childNodes);
+// let li = document.querySelector("li");
+// console.log(li.className);
+// console.log(ul.removeChild(li));
+// console.log(li);
+// li.classList.add();
+
+// try catch;  with;  eval  可以改变作用域链
+
+// CSSSprite  SVGSprite  Iconfont  base64  优化图片加载
+
+// 置换元素(替换元素): 在不使用css修饰时，元素的标签和属性也会影响元素的显示。
+// 常见的置换元素: img  input  textarea  select  object  iframe  canvas
+
+// 非置换元素(不可替换元素): 此外的其他元素都是非置换元素
+
+// let app = document.querySelector("#app");
+// console.log(app.offsetLeft);
+// console.log(app.offsetTop);
+
+// 算出2~100的所有质数
+
+
+
+
+// let userNumber = parseInt(prompt("请输入任意的整数:"));
+// if (userNumber % 5 === 0 && userNumber % 6 !== 0) {
+//     console.log("这个数字能被5整除,但是不能被6整除");
+// } else if (userNumber % 5 !== 0 && userNumber % 6 === 0) {
+//     console.log("这个数字不能被5整除,但是能被6整除");
+// } else if (userNumber % 5 === 0 && userNumber % 6 === 0) {
+//     console.log("这个数字能被5整除,也能被6整除");
+// } else {
+//     console.log("这个数字即不能被5整除,也不能被6整除");
+// }
+console.log(new window.Event("click"));
+
+Object.create(null); // 创造一个空对象, 没有原型对象
