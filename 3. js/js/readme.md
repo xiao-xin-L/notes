@@ -96,3 +96,90 @@ ajax的优缺点
     2.Flash的优势：1.多媒体处理 2.兼容性 3.矢量图形 4.客户端资源调度
     3.Ajax的劣势：1.它可能破坏浏览器的后退功能   2.使用动态页面更新使得用户难于将某个特定的状态保存到收藏夹中 ，不过这些都有相关方法解决。
     4.Flash的劣势：1.二进制格式 2.格式私有 3.flash 文件经常会很大，用户第一次使用的时候需要忍耐较长的等待时间  4.性能问题
+    
+
+浏览列表就是浏览器对象
+    
+    history location screen navigator
+    
+    
+    严格模式下函数的this指向undefined
+    
+    
+js中的全局函数
+    
+    编码相关:
+        encodeURI()
+        decodeURI()
+        encodeURIComponent()
+        decodeURIComponent()
+        escape(): 对字符串进行编码
+        unescape(): 对由escape()编码的字符串进行解码
+    类型转换:
+        String()
+        Number()
+    数字相关:
+        parseInt()
+        parseFloat()
+        isNaN()
+        isFinite()
+    特殊:
+        eval()
+        
+        
+readystatechange: 读取状态变化
+pageshow: 页面展示
+beforeunload: 页面退出
+DOMContentLoaded: dom内容加载完成
+
+
+ECMAScript中，变量可以存放两种类型的值，即原始值和引用值。
+原始值是存储在栈中的简单数据段，也就是说，它们的值直接存储在变量访问的位置。
+引用值是存储在堆中的对象，也就是说，存储在变量处的值是一个指针，指向存储对象的内存处。
+
+JavaScript的基本数据类型在储存在计算机内存中用八字节(8byte)
+
+
+YUI js和css创建的工具和控件集
+JQuery js库
+MooTools  简洁, 模块化, 面向对象的web引用框架
+ExtJS 
+Yahoo! User Interface  库  (YUI)  包含一个  bucketload 。
+和  YUI  一样， ExtJS  包含大量开箱即用的组件，其中有很多功能强大的网格控件，支持内联编辑、分页、筛选、分组、汇总、缓冲和数据绑定。
+MooTools  和  Prototype 、 jQuery  不包含开箱即用的  UI  控件和小部件.
+
+
+audio和video支持的格式
+
+    Ogg、MPEG4、WebM
+    
+CSS中通过@font-face使用字体也会有跨域问题 ?
+
+数据结构的分类:
+
+    1. 集合
+        数据结构中的元素之间除了“同属一个集合” 的相互关系外，别无其他关系
+    2. 线性结构
+        常用的线性结构有：线性表，栈，队列，双队列，数组，串。
+        数据结构中的元素存在一对一的相互关系。
+    3. 树形结构
+        树形结构是一层次的嵌套结构。 
+        一个树形结构的外层和内层有相似的结构，所以这种结构多可以递归的表示。
+        经典数据结构中的各种树状图是一种典型的树形结构：一颗树可以简单的表示为根， 左子树， 右子树。 左子树和右子树又有自己的子树。
+    4. 图形结构
+        图状结构，简称“图”，是一种复杂的数据结构。
+        图状结构中，每个结点的前驱结点数和后续结点数可以任意多个。
+        数据元素间的关系是任意的。
+        其他数据结构(如树、线性表等)都有明确的条件限制，而图形结构中任意两个数据元素间均可相关联。
+        
+        
+        
+script 脚本放在head和放在body的区别
+
+    script标签内未设置async时：
+    （1）script放在<head>，会阻塞HTML代码的解析和渲染，而放在<body>底部时，不会阻塞HTML代码的解析和渲染。
+    （2）script放在<head>，将无法操作HTML元素，而放在<body>底部时，可以操作HTML元素。
+    （3）script放在<head>，无法通过脚本改变内联的CSS样式，而放在<body>底部时，可以通过脚本改变内联的CSS样式
+    script标签内设置async时：
+    script放在<head>和放在<body>底部时没区别。
+    script标签设置defer时（仅对IE浏览器有用），script脚本会异步加载，在加载过程中不会阻塞HTML代码的解析和渲染，当script脚本加载完毕后，script脚本会立即执行，此时会阻塞HTML代码的解析和渲染。

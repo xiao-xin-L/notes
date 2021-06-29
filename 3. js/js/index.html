@@ -13,23 +13,57 @@
         button{border:none;outline:none;}
         input{border:none;outline:none;}*/
         #app{
-            background-color: blue;
             width: 500px;
             height: 500px;
             margin: 100px 0 0 100px;
             border: 10px solid red;
+            background-color: blue;
+        }
+        
+        div#box1{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        div#box2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
         }
     </style>
 </head>
 <body>
-<div id="app"></div>
-<ul id="wrap">
-    <li class="i">我</li>
-    <li>爱</li>
-    <li>你</li>
-    <li>爱</li>
-    <li>你</li>
-</ul>
+<form action="#" id="app">
+    <input type="text" id="inp">
+</form>
+
+<div id="box1">
+    <div id="box2"></div>
+</div>
+
+
 <script src="./index.js"></script>
+
+<script>
+    const $ = document.querySelector.bind(document);
+    const box1 = $('#box1');
+    const box2 = $('#box2');
+
+    box1.addEventListener('click', () => {
+        console.log('box1 true');
+    }, true);
+
+    box1.addEventListener('click', () => {
+        console.log('box1 false');
+    }, false);
+
+    box2.addEventListener('click', () => {
+        console.log('box2 true');
+    }, true);
+
+    box2.addEventListener('click', () => {
+        console.log('box2 false');
+    }, false);
+</script>
 </body>
 </html>
