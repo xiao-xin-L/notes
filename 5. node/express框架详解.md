@@ -135,13 +135,16 @@
    })
    // 以下是对对应的请求进行操作
    .get(function(req, res) {
-       res.send("");
+       res.send(""); // 响应一个字符串数据
+       res.json({}); // 响应一个json数据
    })
    .options(function(req, res) {
        res.send("");
+       res.json({});
    })
    .post(function(req, res) {
        res.send("");
+       res.json({});
    })
    
    // 设置请求头

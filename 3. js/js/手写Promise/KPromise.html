@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Author" content="小鑫">
-    <title>$Document$</title>
-    <style>
-        /*body,ol,ul,li,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
-        ol,ul,li{padding:0;list-style:none;}
-        button{border:none;outline:none;}
-        input{border:none;outline:none;}*/
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Author" content="小鑫">
+  <title>手写Promise</title>
+  <style>
+    /*body,ol,ul,li,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+    ol,ul,li{padding:0;list-style:none;}
+    button{border:none;outline:none;}
+    input{border:none;outline:none;}*/
+  </style>
 </head>
 <body>
-$END$
+<script src="KPromise.js"></script>
+<script>
+
+  let p1 = new KPromise((resolve, reject) => {
+    console.log("异步任务");
+    resolve(123);
+    reject("报错啦!!")
+  });
+  p1
+      .then((val) => {
+        console.log("这是第一个then函数", val);
+        return new KPromise((resolve, reject) => {
+          resolve(321);
+        })
+      }, (err) => {
+        console.log("这是第一个catch函数", err);
+      })
+      .then((val) => {
+        console.log("这是第二个then函数", val);
+      }, () => {
+        console.log("这是第二个catch函数");
+      })
+  // p1.then(() => {
+  //   console.log("这是第二个then函数");
+  // })
+
+  console.log("script end");
+
+</script>
 </body>
 </html>

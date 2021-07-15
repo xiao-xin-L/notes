@@ -6,7 +6,7 @@
            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Author" content="小鑫">
-    <title>$Document$</title>
+    <title>Promise</title>
     <style>
         /*body,ol,ul,li,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{padding:0;list-style:none;}
@@ -15,6 +15,21 @@
     </style>
 </head>
 <body>
-$END$
+<script>
+  
+  let p = new Promise((resolve, reject) => {
+    resolve(123);
+  })
+      .then((val) => {
+        console.log("第一个then", val)
+        return new Promise(resolve => {
+          resolve(321)
+        })
+      })
+      .then(value => {
+        console.log("第二个then", value)
+      })
+  
+</script>
 </body>
 </html>

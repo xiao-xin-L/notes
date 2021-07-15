@@ -183,3 +183,25 @@ script 脚本放在head和放在body的区别
     script标签内设置async时：
     script放在<head>和放在<body>底部时没区别。
     script标签设置defer时（仅对IE浏览器有用），script脚本会异步加载，在加载过程中不会阻塞HTML代码的解析和渲染，当script脚本加载完毕后，script脚本会立即执行，此时会阻塞HTML代码的解析和渲染。
+    
+js中深拷贝和浅拷贝的区别
+    
+    深拷贝递归地复制新对象中的所有值或属性，而拷贝只复制引用。
+    在深拷贝中，新对象中的更改不会影响原始对象，而在浅拷贝中，新对象中的更改，原始对象中也会跟着改。
+    在深拷贝中，原始对象不与新对象共享相同的属性，而在浅拷贝中，它们具有相同的属性。
+    
+单元测试框架
+    
+    Unit.js
+    Jasmine
+    Karma
+    Chai
+    AVA
+    Mocha
+    JSUnit
+    QUnit
+    Jest
+    
+注意： encodeURI()和decodeURI()不会编码类似这样字符： / ? : @ & = + $ #，如果需要编码这些字符，请使用encodeURIComponent()和decodeURIComponent()。
+
+

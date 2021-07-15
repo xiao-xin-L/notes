@@ -422,7 +422,7 @@ SubType.prototype.sayAge = function () {
     return this.age;
 }
 let subType = new SubType("哈哈", 20);
-console.log(subType.sayAge());
+// console.log(subType.sayAge());
 
 // 第二种, 原型式继承 (只继承引用类型数据)
 function object(o) {
@@ -444,8 +444,8 @@ let author2 = object(author);
 author2.name = "haha";
 author2.girlFriends.push("linjiaxin");
 
-console.log(author1);
-console.log(author2);
+// console.log(author1);
+// console.log(author2);
 
 // 第三种, 寄生式继承
 function obj(o) {
@@ -473,7 +473,7 @@ function Per(name, age) {
 }
 
 let newAuthor = createAuthor(new Per("xiaoxin", 20))
-console.log(newAuthor);
+// console.log(newAuthor);
 
 // 第四种, 寄生组合式继承 (最理想的继承)
 function object1(o) {
@@ -511,7 +511,7 @@ SubType1.prototype.sayAge = function () {
 
 let subType1 = new SubType1("xiaoxin", 20);
 
-console.log(subType1);
+// console.log(subType1);
 
 
 // 高级函数
@@ -520,39 +520,39 @@ console.log(subType1);
 // 2. 闭包
 // 3. 高阶函数
 // 4. 函数柯理化
-function addCurrying(a) {
-    return function (b) {
-        return function (c) {
-            return a + b + c;
-        }
-    }
-}
-
-addCurrying(1)(2)(3)
-
-// 相当于以下
-
-function currying(a, b, c) {
-    return a + b + c;
-}
-
-currying(1, 2, 3);
+// function addCurrying(a) {
+//     return function (b) {
+//         return function (c) {
+//             return a + b + c;
+//         }
+//     }
+// }
+//
+// addCurrying(1)(2)(3)
+//
+// // 相当于以下
+//
+// function currying(a, b, c) {
+//     return a + b + c;
+// }
+//
+// currying(1, 2, 3);
 
 // 柯理化通用函数 (函数的length是形参的个数)
-function createCurrying(func, args) {
-    let arity = func.length; // 形参个数
-    var args = args || []; //
-
-    return function () {
-        let _args = [].slice.call(arguments);
-        Array.prototype.unshift.apply(_args, args);
-        if (_args.length < arity) {
-            return createCurrying.call(null, func, _args);
-        }
-
-        return func.apply(null, _args);
-    }
-}
+// function createCurrying(func, args) {
+//     let arity = func.length; // 形参个数
+//     var args = args || []; //
+//
+//     return function () {
+//         let _args = [].slice.call(arguments);
+//         Array.prototype.unshift.apply(_args, args);
+//         if (_args.length < arity) {
+//             return createCurrying.call(null, func, _args);
+//         }
+//
+//         return func.apply(null, _args);
+//     }
+// }
 
 
 // let ob = {
@@ -587,4 +587,193 @@ function createCurrying(func, args) {
 // es6数组方法: Array.from, Array.of, copyWithin, find, findIndex, fill, entries, keys, values, includes, flat, flatMap,
 
 
-// es5字符串方法:
+// es5字符串方法: chatAt, chatCodeAt, codePointAt, String.fromChatCode, subStr, subString, slice, splice, indexOf, lastIndexOf,
+// concat, match, matchAll, repeat, replace, replaceAll, search, split, toLocaleUpperCase, toLocaleLowerCase, toUpperCase, toLowerCase
+// trim, trimLeft, trimRight, trimStart, trimEnd, String.raw, startsWith, endsWith, padStart, padEnd
+// locale 语言环境, 在方法中有这个单词的, 是针对地区的写法
+
+
+// 字符串和数组的相同方法: slice, splice, indexOf, lastIndexOf, concat
+
+// symbol数据类型的方法: Symbol.for, Symbol.keyFor, description(属性), [Symbol.hasInstance], [Symbol.isConcatSpreadable],
+
+
+// let obj10 = {
+//
+//     str:()=>{
+//         let str =0
+//         console.log(this)
+//         return this
+//     }
+// }
+// console.log(obj10.str());
+
+//
+// let obj2 = {
+//     str: "obj2",
+//     fn(){
+//         let fn2=()=>this.str;
+//         console.log(fn2());
+//         return {
+//             fn1: ()=>this.str
+//         }
+//     }
+// }
+// console.log(obj2.fn().fn1());
+
+
+// let el = document.querySelector("#div1");
+// let myWeakMap = new WeakMap();
+//
+// myWeakMap.set(el, {count: 0});
+// console.log(el);
+// let el1 = myWeakMap.get(el)
+// console.log(el1.count);
+
+
+function* Generator() {
+    yield "1";
+    yield "2"
+}
+let g = Generator();
+
+// 用户输入一个数字n，计算1+2+3+4+……n的和。
+// let userNumber = parseInt(prompt("请输入数字"));
+function add(n) {
+    if (n === 1) {
+        return 1;
+    }
+    return n + add(n - 1);
+}
+add(100);
+
+// 用户输入一个数字n, 计算3/2+...+n+1/n
+// let userNum = parseInt(prompt("请输入数字"))
+// function addN(n){
+//     if (n === 1){
+//         return 3/2;
+//     }
+//     if ()
+//     return (n+1)/addN(n)
+// }
+// addN(userNum);
+
+
+//编写一个函数rev用于将一个整数前后倒置。
+// 例如rev(12345)将返回54321，rev(123)将返回321
+
+function reverseNumber(n) {
+    let str = n.toString().split("");
+    str = str.reverse();
+    str = str.join("");
+    let newN = parseInt(str);
+    return newN;
+}
+
+// 写一个函数实现加法计算机
+function accumulate() {
+    let result = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    return result;
+}
+
+// 定义一组函数,输入数字,逆转并输出汉字形式
+function toChinece(n) {
+    let arr = n.toString().split("");
+    arr = arr.reverse();
+    for (let i = 0; i < arr.length; i++) {
+        switch (arr[i]) {
+            case "0":
+                arr[i] = "零";
+                break;
+            case "1":
+                arr[i] = "壹";
+                break;
+            case "2":
+                arr[i] = "贰";
+                break;
+            case "3":
+                arr[i] = "叁";
+                break;
+            case "4":
+                arr[i] = "肆";
+                break;
+            case "5":
+                arr[i] = "伍";
+                break;
+            case "6":
+                arr[i] = "陆";
+                break;
+            case "7":
+                arr[i] = "柒";
+                break;
+            case "8":
+                arr[i] = "捌";
+                break;
+            case "9":
+                arr[i] = "玖";
+                break;
+        }
+    }
+    return arr.join("");
+}
+
+
+// 用户输入一个三位数，弹出各个数位的和：
+// 比如:用户输入155，就弹出11 用户输入316，就弹出10 用户输入989，就弹出26 用户输入678，就弹出21
+
+// let num = parseInt(prompt("请输入一个三位数"));
+// let result = 0;
+// while (true) {
+//     let strNum = num.toString();
+//     if (strNum.length !== 3) {
+//         alert("输入有误,请重新输入");
+//         num = parseInt(prompt("请输入一个三位数"));
+//     } else {
+//         break;
+//     }
+// }
+// for (let i = 0; i < strNum.length; i++) {
+//     result += parseInt(strNum[i]);
+// }
+// alert(result);
+
+
+// 100~999之内，只有4个水仙花数，请编程找出来。
+// let arr = [];
+// for (let i = 100; i <= 999; i++) {
+//     let strI = i.toString();
+//     let singleStr = strI[0] * strI[0] * strI[0] + strI[1] * strI[1] * strI[1] + strI[2] * strI[2] * strI[2]
+//     if (singleStr === strI) {
+//         arr.push(strI);
+//         console.log(singleStr);
+//     }
+//     // console.log(strI);
+// }
+// console.log(arr);
+
+
+
+// 图片加载
+
+// function loadImage(path) {
+//     let img = new Image();
+    
+// }
+
+// 箭头函数调用bind会不会报错?????(竟然还需尝试!!!)
+// let func = (a) => {
+//     console.log(a);
+//     console.log("箭头函数")
+// }
+
+// function foo(b){
+//     console.log(b);
+//     console.log("普通函数")
+// }
+
+// let newFn = func.bind(foo, 1);
+
+// console.log(newFn());
